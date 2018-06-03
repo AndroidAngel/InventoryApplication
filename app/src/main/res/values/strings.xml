@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">InventoryApplication</string>
+    <string name="product_name">Product Name:</string>
+    <string name="price">Price:</string>
+    <string name="supplier_name">Supplier Name:</string>
+    <string name="abc_store">abc store</string>
+    <string name="supplier_contact_no">Supplier Contact No.:</string>
+    <string name="e_g_639991234567">e.g +639991234567</string>
+    <string name="supplier_email_add">Supplier Email Add:</string>
+    <string name="abc_gmail_com">abc@gmail.com</string>
+    <string name="add_item_to_the_inventory">Add item to the inventory</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="dummy_data">Dummy Data</string>
+    <string name="save">Save</string>
+    <string name="order">Order</string>
+    <string name="delete_item">Delete Item</string>
+    <string name="delete_all_item">Delete All Item</string>
+
+
+    <string name="activity_title_new_item">Add new item</string>
+    <string name="activity_title_edit_item">Edit item</string>
+
+    <string name="unsaved_changes">There are unsaved changes in the product information. Do you want to continue?</string>
+    <string name="discard">Discard</string>
+    <string name="continue_editing">Continue editing</string>
+
+    <string name="phone">Phone</string>
+    <string name="email">E-mail</string>
+
+    <string name="order_message">You can place an order via phone or e-mail</string>
+    <string name="delete_message">Are you sure you want to proceed with the deletion?</string>
+    <string name="delete">Accept</string>
+    <string name="cancel">Cancel</string>
+    <string name="new_product">New Product</string>
+    <string name="adobo">Adobo</string>
+    <string name="_10">10</string>
+    <string name="image">Image</string>
+
+    <string name="currency_details">₱ / item</string>
+    <string name="buy_button">Buy</string>
+    <string name="_15">15</string>
+
+
+</resources>

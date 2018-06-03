@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/product_name_tv"
+            android:textStyle="bold"
+            android:text="@string/product_name"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/product_name_edit"
+            android:nextFocusDown="@id/product_name_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/price_tv"
+            android:textStyle="bold"
+            android:text="@string/price"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/price_edit"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="6"
+            android:layout_height="0dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="8"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/plus_btn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/add"
+                android:layout_height="match_parent" />
+
+            <EditText
+                android:id="@+id/quantity_edit"
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="6"
+                android:layout_height="wrap_content" />
+            <ImageButton
+                android:id="@+id/minus_btn"
+                android:src="@drawable/decrease_black"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/supplier_name_tv"
+            android:textStyle="bold"
+            android:text="@string/supplier_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/supplier_name_edit"
+            android:inputType="text"
+            android:hint="@string/abc_store"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/supplier_phone_tv"
+            android:textStyle="bold"
+            android:text="@string/supplier_contact_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/supplier_phone_edit"
+            android:inputType="phone"
+            android:hint="@string/e_g_639991234567"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/supplier_email_tv"
+            android:textStyle="bold"
+            android:text="@string/supplier_email_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:hint="@string/abc_gmail_com"
+            android:inputType="textEmailAddress"
+            android:id="@+id/supplier_email_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/image_tv"
+            android:textStyle="bold"
+            android:text="@string/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/camera_btn"
+                android:text="@string/camera"
+                android:layout_marginEnd="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/gallery_btn"
+                android:text="@string/gallery"
+                android:layout_marginStart="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
