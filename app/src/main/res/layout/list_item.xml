@@ -1,41 +1,30 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:padding="16dp"
-    android:weightSum="1"
+    android:layout_height="match_parent"
     android:background="#dbdbdb"
     android:orientation="horizontal"
-    android:layout_height="match_parent">
+    android:padding="16dp"
+    android:weightSum="1">
 
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:gravity="center_vertical"
-        android:layout_margin="8dp"/>
+        style="@style/ProductListItemImageProduct" />
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/product_name"
-            android:layout_width="match_parent"
-            android:text="@string/adobo"
-            android:textSize="25sp"
-            android:textColor="#000000"
-            android:layout_marginBottom="8dp"
-            android:layout_height="wrap_content"/>
+            style="@style/ProductListItemNameProduct"
+            android:text="@string/adobo" />
+
         <TextView
             android:id="@+id/price"
-            android:layout_width="match_parent"
-            android:layout_marginBottom="8dp"
-            android:textColor="#484f93"
-            android:text="@string/_10"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:layout_height="wrap_content" />
+            style="@style/ProductListItemPriceProduct"
+            android:text="@string/_10" />
 
         <LinearLayout
 
@@ -45,30 +34,21 @@
             android:orientation="horizontal">
 
             <TextView
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                style="@style/TextAvailabilityListItem"
                 android:text="@string/availability" />
 
             <TextView
                 android:id="@+id/quantity"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/_15"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+                style="@style/ListItemQuantity"
+                android:text="@string/_15" />
         </LinearLayout>
 
 
-            <ImageView
-                android:id="@+id/buy"
-                android:layout_width="30dp"
-                android:focusable="false"
-                android:layout_gravity="center"
-                android:src="@drawable/add_to_cart"
-                android:focusableInTouchMode="false"
-                android:layout_height="30dp" />
-
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/buy"
+            style="@style/ListItemBuyIconTheme"
+            android:src="@drawable/add_to_cart" />
 
     </LinearLayout>
+
+</LinearLayout>
