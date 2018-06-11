@@ -45,6 +45,7 @@
     <string name="action_save">action_save</string>
     <string name="action_order">action_order</string>
     <string name="order">order</string>
+    <string name="availability">Availability:</string>
 
 
 </resources>
