@@ -13,9 +13,6 @@ import android.widget.TextView;
 public class StockAdapter extends CursorAdapter{
 
     private final MainActivity activity;
-
-
-
     public StockAdapter(MainActivity context, Cursor c) {
         super(context, c, 0);
         this.activity = context;
@@ -33,7 +30,7 @@ public class StockAdapter extends CursorAdapter{
         TextView productQuantityTV = view.findViewById(R.id.quantity);
         TextView productPriceTV =  view.findViewById(R.id.price);
         ImageView buyImg =  view.findViewById(R.id.buy);
-        ImageView productImg = view.findViewById(R.id.image);
+        ImageView productImg = view.findViewById(R.id.image_view);
 
         String name = cursor.getString(cursor.getColumnIndex(StockContract.StockEntry.COLUMN_NAME));
         final int quantity = cursor.getInt(cursor.getColumnIndex(StockContract.StockEntry.COLUMN_QUANTITY));
@@ -57,7 +54,7 @@ public class StockAdapter extends CursorAdapter{
         buyImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                activity.clickOnBuy(id,quantity);
+                activity.clickOnSale(id,quantity);
 
             }
         });

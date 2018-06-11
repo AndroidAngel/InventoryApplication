@@ -10,8 +10,7 @@ public class Stock {
     private final String supplierEmail;
     private final String image;
 
-    public Stock(String productName, String price, int quantity, String supplierName,
-                 String supplierPhone, String supplierEmail, String image){
+    public Stock(String productName, String price, int quantity, String supplierName, String supplierPhone, String supplierEmail, String image) {
         this.productName = productName;
         this.price = price;
         this.quantity = quantity;
@@ -49,15 +48,15 @@ public class Stock {
         return image;
     }
     @Override
-    public String toString(){
+    public String toString() {
         return "Stock{" +
                 "productName='" + productName + '\'' +
                 ", price='" + price + '\'' +
-                ", quantity=" + quantity + '\'' +
+                ", quantity=" + quantity +
                 ", supplierName='" + supplierName + '\'' +
                 ", supplierPhone='" + supplierPhone + '\'' +
-                ", supplierEmail='" + supplierEmail + '\'' + '}';
-
-
+                ", supplierEmail='" + supplierEmail + '\'' +
+                '}';
     }
+
 }

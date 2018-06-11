@@ -12,18 +12,20 @@
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
     <string name="dummy_data">Dummy Data</string>
-    <string name="save">Save</string>
-    <string name="order">Order</string>
     <string name="delete_item">Delete Item</string>
     <string name="delete_all_item">Delete All Item</string>
 
 
+
+    <string name="editor_activity_title_new_item">Add new item</string>
+    <string name="editor_activity_title_edit_item">Edit item</string>
+
+    <string name="unsaved_changes_dialog_msg">There are unsaved changes in the product information. Do you want to continue?</string>
+    <string name="discard">Discard</string>
+    <string name="keep_editing">Keep editing</string>
+
     <string name="activity_title_new_item">Add new item</string>
     <string name="activity_title_edit_item">Edit item</string>
-
-    <string name="unsaved_changes">There are unsaved changes in the product information. Do you want to continue?</string>
-    <string name="discard">Discard</string>
-    <string name="continue_editing">Continue editing</string>
 
     <string name="phone">Phone</string>
     <string name="email">E-mail</string>
@@ -40,6 +42,9 @@
     <string name="currency_details">₱ / item</string>
     <string name="buy_button">Buy</string>
     <string name="_15">15</string>
+    <string name="action_save">action_save</string>
+    <string name="action_order">action_order</string>
+    <string name="order">order</string>
 
 
 </resources>

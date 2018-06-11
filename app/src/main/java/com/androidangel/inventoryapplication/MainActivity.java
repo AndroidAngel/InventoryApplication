@@ -12,42 +12,42 @@ import android.widget.AbsListView;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
-
     private final static String LOG_TAG = MainActivity.class.getCanonicalName();
-    StockDbHelper stockDbHelper;
-    StockAdapter stockAdapter;
+    StockDbHelper dbHelper;
+    StockAdapter adapter;
     int lastVisibleItem = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        stockDbHelper = new StockDbHelper(this);
+        dbHelper = new StockDbHelper(this);
 
         final FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
+                Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
                 startActivity(intent);
             }
         });
-        final ListView listView = findViewById(R.id.listView_v);
-        View emptyV = findViewById(R.id.empty_v);
-        listView.setEmptyView(emptyV);
-        Cursor cursor = stockDbHelper.readStock();
-        stockAdapter = new StockAdapter(this,cursor);
-        listView.setAdapter(stockAdapter);
-        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
 
+        final ListView listView = findViewById(R.id.listView_v);
+        View emptyView = findViewById(R.id.empty_v);
+        listView.setEmptyView(emptyView);
+
+        Cursor cursor = dbHelper.readStock();
+
+        adapter = new StockAdapter(this, cursor);
+        listView.setAdapter(adapter);
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                if (scrollState == 0)
-                    return;
+                if(scrollState == 0) return;
                 final int currentFirstVisibleItem = view.getFirstVisiblePosition();
                 if (currentFirstVisibleItem > lastVisibleItem) {
                     fab.show();
-                }else if (currentFirstVisibleItem < lastVisibleItem){
+                } else if (currentFirstVisibleItem < lastVisibleItem) {
                     fab.hide();
                 }
                 lastVisibleItem = currentFirstVisibleItem;
@@ -57,40 +57,41 @@ public class MainActivity extends AppCompatActivity {
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 
             }
-
         });
     }
+
     @Override
     protected void onResume() {
         super.onResume();
-        stockAdapter.swapCursor(stockDbHelper.readStock());
+        adapter.swapCursor(dbHelper.readStock());
     }
 
     public void clickOnViewItem(long id) {
-        Intent intent = new Intent(this,DetailsActivity.class);
-        intent.putExtra("ItemId", id);
+        Intent intent = new Intent(this, DetailsActivity.class);
+        intent.putExtra("itemId", id);
         startActivity(intent);
     }
 
-    public void clickOnBuy(long id, int quantity) {
-        stockDbHelper.sellItem(id, quantity);
-        stockAdapter.swapCursor(stockDbHelper.readStock());
+    public void clickOnSale(long id, int quantity) {
+        dbHelper.sellOneItem(id, quantity);
+        adapter.swapCursor(dbHelper.readStock());
     }
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
+
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.dummmy_data:
                 addDummyData();
-                stockAdapter.swapCursor(stockDbHelper.readStock());
+                adapter.swapCursor(dbHelper.readStock());
         }
         return super.onOptionsItemSelected(item);
     }
-
     private void addDummyData() {
 
         Stock adoboDummy =  new Stock(
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 "+02 526 1234",
                 "nenafoodhouse@gmail.com",
                 "android.resource://com.androidangel.inventoryapplication/drawable/adobo_dummy");
-        stockDbHelper.insertItem(adoboDummy);
+        dbHelper.insertItem(adoboDummy);
 
         Stock arrozCaldoDummy = new Stock(
                 "Arroz Caldo",
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 "+02 123 4567",
                 "lugawansakanto@gmail.com",
                 "android.resource://com.androidangel.inventoryapplication/drawable/arroz_caldo_dummy");
-                stockDbHelper.insertItem(arrozCaldoDummy);
+        dbHelper.insertItem(arrozCaldoDummy);
 
         Stock balotDummy = new Stock(
                 "Balot",
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 "+02 012 5678",
                 "balothouse@gmail.com",
                 "android.resource://com.androidangel.inventoryapplication/drawable/balot_dummy");
-        stockDbHelper.insertItem(balotDummy);
+        dbHelper.insertItem(balotDummy);
 
 
         Stock bulaloDummy = new Stock(
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 "+639 123 4567 89",
                 "jerrysbulalohan@gmail.com",
                 "android.resource://com.androidangel.inventoryapplication/drawable/bulalo_dummy");
-        stockDbHelper.insertItem(bulaloDummy);
+        dbHelper.insertItem(bulaloDummy);
 
         Stock pinakbetDummy = new Stock(
                 "Pinakbet",
@@ -142,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                 "+02 526 1234",
                 "nenafoodhouse@gmail.com",
                 "android.resource://com.androidangel.inventoryapplication/drawable/pinakbet_dummy");
-        stockDbHelper.insertItem(pinakbetDummy);
+        dbHelper.insertItem(pinakbetDummy);
 
         Stock sinigangDummy = new Stock(
                 "Sinigang na Hipon",
@@ -152,6 +153,6 @@ public class MainActivity extends AppCompatActivity {
                 "+02 526 1234",
                 "nenafoodhouse@gmail.com",
                 "android.resource://com.androidangel.inventoryapplication/drawable/sinigang_dummy");
-        stockDbHelper.insertItem(sinigangDummy);
+        dbHelper.insertItem(sinigangDummy);
     }
 }
